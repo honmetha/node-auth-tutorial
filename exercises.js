@@ -16,9 +16,26 @@ ucFirst("honma");
 
 // Ex 3
 function checkSpam(string) {
-  return (string.includes("xxx") || string.toLowerCase().includes("viagra")) == true ? true : false;
+  str = string.toLowerCase();
+  return (str.includes("xxx") ||
+  str.includes("viagra"))
 }
 
 checkSpam('buy ViAgRA now');
 checkSpam('free xxxxx');
 checkSpam("innocent rabbit");
+
+// Ex 4
+function truncate(str, maxlength) {
+  return str.length > maxlength - 1 ? str.slice(0, maxlength - 1) + "..." : str;
+}
+
+truncate("What I'd like to tell on this topic is:", 20)
+truncate("Hi everyone!", 20)
+
+// Ex 5
+function extractCurrencyValue(string, rate) {
+  return string.slice(1) * rate
+}
+
+alert( extractCurrencyValue('$120', 30.5) === 3660 );
