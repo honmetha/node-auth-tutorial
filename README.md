@@ -1,1 +1,1 @@
-# Basic Express.js
+# Node Auth Tutorial (JWT)
