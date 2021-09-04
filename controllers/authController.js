@@ -1,5 +1,10 @@
 const User = require("../models/User");
 
+// handle errors
+const handleErrors = (err) => {
+  console.log(err.message, err.code);
+};
+
 module.exports.signup_get = (req, res) => {
   res.render("signup");
 };
@@ -15,7 +20,7 @@ module.exports.signup_post = async (req, res) => {
     const user = await User.create({ email, password });
     res.status(200).json(user);
   } catch (err) {
-    console.log(`err`, err);
+    handleErrors(err);
     res.status(400).send("error, user not created");
   }
 };
