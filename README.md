@@ -1,5 +1,10 @@
 # Node Auth Tutorial (JWT)
 
+<p float="left">
+  <a href="https://nodejs.org/en/"><img src="./public/nodejs.png" alt="Node.js" width="300"></a>
+  <a href="https://jwt.io/"><img src="./public/jwt.png" alt="JWT" width="90"></a>
+</p>
+
 ## 📖 Chapters
 
 1. Intro & Setup
