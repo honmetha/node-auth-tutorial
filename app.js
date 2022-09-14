@@ -1,9 +1,11 @@
 const express = require("express");
+const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/authRoutes");
 const cookieParser = require("cookie-parser");
 const { requireAuth, checkUser } = require("./middleware/authMiddleware");
 
+dotenv.config();
 const app = express();
 
 // middleware
@@ -15,15 +17,13 @@ app.use(cookieParser());
 app.set("view engine", "ejs");
 
 // database connection
-const dbURI =
-  "***REMOVED***";
 mongoose
-  .connect(dbURI, {
+  .connect(`${process.env.MONGO_URI}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
   })
-  .then((result) => app.listen(3000))
+  .then((result) => app.listen(process.env.PORT))
   .catch((err) => console.log(err));
 
 // routes
